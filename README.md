@@ -33,6 +33,15 @@ cd rpi-cec-switch
 npm install
 node index.js
 ```
+5. Set the Node app to auto-start
+I did this via crontab
+```
+sudo crontab -e
+```
+Add this line
+```
+@reboot /usr/bin/node /home/pi/rpi-cec-switch/index.js &
+```
 ### SmartThings Integration
 This will create a button in SmartThings to interact with the Raspberry Pi webserver using this [HTTP Button by Chancsc on Github](https://github.com/chancsc/SC_SmartThings)
 
